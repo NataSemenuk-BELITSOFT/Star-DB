@@ -1,6 +1,11 @@
 .personDetails {
+    display: flex;
     padding: 10px; 
     background-color: rgb(71, 71, 71);
+}
+.personDetails>div {
+    margin-left: 20px;
+    flex-grow: 1;
 }
 .personName {
     color: white;
@@ -10,8 +15,14 @@
     list-style-type: none;
     padding: 0 20px;
 }
-.description-item {
+.description__item {
     color: white;
     padding: 5px 0;
     border-bottom: 1px solid rgb(100, 100, 100);
+}
+.description__value {
+    padding: 20px;
+}
+.personeImage {
+    width: 200px;
 }

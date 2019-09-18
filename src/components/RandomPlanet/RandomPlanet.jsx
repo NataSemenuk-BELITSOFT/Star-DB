@@ -29,17 +29,17 @@ class RandomPlanet extends Component {
                 <div>
                     <p className = 'planetName'>{ name }</p>
                     <ul className = 'descriptionPlanet'>
-                        <li className = 'description-item'>
+                        <li className = 'description__item'>
                             <span>Population</span>
-                            <span className = 'description-value'>{ population }</span>
+                            <span className = 'description__value'>{ population }</span>
                         </li>
-                        <li className = 'description-item'>
+                        <li className = 'description__item'>
                             <span>Rotation Period</span>
-                            <span className = 'description-value'>{ rotationPeriod }</span>
+                            <span className = 'description__value'>{ rotationPeriod }</span>
                         </li>
-                        <li className = 'description-item'>
+                        <li className = 'description__item'>
                             <span>Diameter</span>
-                            <span className = 'description-value'>{ diameter }</span>
+                            <span className = 'description__value'>{ diameter }</span>
                         </li>
                     </ul>
                 </div>
