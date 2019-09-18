@@ -5,30 +5,21 @@ import SwapiService from '../../services/swapi-service';
 class RandomPlanet extends Component {
     swapiService = new SwapiService();
     state = {
-        name: null,
-        population: null,
-        rotationPeriod: null,
-        diameter: null,
-        id: null,
+        planet: {}
     }
     constructor() {
         super();
         this.updatePlanet();
     }
+    onPlanetLoad = (planet) => {
+        this.setState({planet})
+    }
     updatePlanet = () => {
         const id  = Math.floor(Math.random()*25 + 2);
-        this.swapiService.getPlanet(id).then(( planet ) => {
-            this.setState({
-                id,
-                name: planet.name,
-                population: planet.population,
-                rotationPeriod: planet.rotation_period, 
-                diameter: planet.diameter, 
-            });
-        });
+        this.swapiService.getPlanet(id).then(this.onPlanetLoad);
     }
     render () {
-        const { name, population, rotationPeriod, diameter, id } = this.state;
+        const { planet: { name, population, rotationPeriod, diameter, id }} = this.state;
         return (
             <div className = 'randomPlanet'>
                 <img className = 'planetImage' 

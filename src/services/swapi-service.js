@@ -11,25 +11,64 @@ export default class SwapiService {
 
     async getAllPeople() {
         const result = await this.getResourse('/people/');
-        return result.results;
+        return result.results.map(this._transformPerson);
     };
-    getPersone(id) {
-        return this.getResourse(`/people/${id}`);
+    async getPersone(id) {
+        const person = await this.getResourse(`/people/${id}`);
+        return person;
     };
 
     async getAllPlanets(){
         const result = await this.getResourse('/planets/');
-        return result.results;
+        return result.results.map(this._transformPlanet);
     };
-    getPlanet(id) {
-        return this.getResourse(`/planets/${id}`);
+    async getPlanet(id) {
+        const planet = await this.getResourse(`/planets/${id}`);
+        return this._transformPlanet(planet);
     };
 
     async getAllStarships() {
         const result = await this.getResourse('/starships/');
-        return result.results;
+        return result.results.map(this._transformStarship);
     };
-    getStarship(id) {
-        return this.getResourse(`/starships/${id}`);
+    async getStarship(id) {
+        const starship = await this.getResourse(`/starships/${id}`);
+        return starship;
     };
+    _extractId( item ) {
+        const idRegExp = /\/([0-9]*)\/$/;
+        const id = item.url.match(idRegExp)[1];
+        return id;
+    }
+    _transformPlanet(planet) {
+        return {
+            id: this._extractId( planet ),
+            name: planet.name,
+            population: planet.population,
+            rotationPeriod: planet.rotation_period, 
+            diameter: planet.diameter, 
+        }
+    }
+    _transformPerson(person) {
+        return {
+            id: this._extractId(person),
+            name: person.name,
+            gender: person.gender,
+            birthYear: person.birthYear,
+            eyeColor: person.eyeColor,
+        }
+    }
+    _transformStarship ( starship ) {
+        return {
+            id: this._extractId(starship),
+            name: starship.name,
+            model: starship.model,
+            manufacture: starship.manufacture,
+            constInCredits: starship.constInCredits,
+            length: starship.length,
+            crew: starship.crew,
+            passengers: starship.passengers,
+            cargoCapacity: starship.cargoCapacity,
+        }
+    }
 }
