@@ -1,17 +1,12 @@
-.randomPlanet {
-    display: flex;
+.personDetails {
     padding: 10px; 
     background-color: rgb(71, 71, 71);
 }
-.randomPlanet>div {
-    margin-left: 20px;
-    flex-grow: 1;
-}
-.planetName {
+.personName {
     color: white;
     font-size: 1.2em;
 }
-.descriptionPlanet {
+.descriptionPerson {
     list-style-type: none;
     padding: 0 20px;
 }
@@ -19,10 +14,4 @@
     color: white;
     padding: 5px 0;
     border-bottom: 1px solid rgb(100, 100, 100);
-}
-.description-value {
-    padding: 20px;
-}
-.planetImage {
-    width: 200px;
 }

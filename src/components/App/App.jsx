@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet/RandomPlanet';
+import ItemList from '../ItemList/ItemList';
+import PersonDetails from '../PersonDetails/PersonDetails'; 
 import './App.css';
 
 class App extends Component {
@@ -9,6 +11,8 @@ class App extends Component {
             <div>
                 <Header/>
                 <RandomPlanet/>
+                <ItemList/>
+                <PersonDetails/>
             </div>
         );
     }
