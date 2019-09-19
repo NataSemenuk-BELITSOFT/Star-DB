@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet/RandomPlanet';
 import ItemList from '../ItemList/ItemList';
 import PersonDetails from '../PersonDetails/PersonDetails'; 
+import Spinner from '../Spinner/Spinner';
 import './App.css';
 
 class App extends Component {
