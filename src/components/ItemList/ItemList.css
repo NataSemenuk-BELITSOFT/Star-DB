@@ -3,12 +3,10 @@
     padding: 0;
     border: 1px solid rgb(100, 100, 100);
 }
-.itemList-item { 
+.itemList__item { 
+    cursor: pointer;
     padding: 10px;
+    color: white;
     background-color: rgb(71, 71, 71);
     border-bottom: 1px solid rgb(100, 100, 100);
-}
-.itemList-item>a {
-    color: white;
-    text-decoration: none;
 }

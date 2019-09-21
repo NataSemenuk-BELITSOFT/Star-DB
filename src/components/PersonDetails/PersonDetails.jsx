@@ -11,22 +11,34 @@ export default class PersonDetails extends Component {
     }
     constructor() {
         super();
+    }
+    componentDidMount() {
         this.updatePerson();
     }
-    onPersonLoad = ( person ) => {
-        this.setState({
-            person, 
-            loading: false,
-        });
+    componentDidUpdate(prevProps) {
+        if(this.props.personId !== prevProps.personId) {
+            this.updatePerson();
+        }
     }
-    updatePerson = () => {
-        const id = Math.floor(Math.random()*25 + 2);
-        this.swapiService.getPersone(id).then(this.onPersonLoad);
+    updatePerson() {
+        const { personId } = this.props;
+        if(!personId) {
+            return;
+        }
+        this.swapiService
+            .getPersone(personId)
+            .then((person) => {
+                this.setState({
+                    person,
+                    loading: false,
+                });
+            });
     }
     render() {
+        const { personId } = this.props;
         const { person, loading } = this.state;
         const spinner = loading ? <Spinner /> : null;
-        const content = !loading ? <PersonView person = {person} /> : null;
+        const content = !loading ? <PersonView person = {person} personId = {personId} /> : null;
         return (
             <div className = 'personDetails'>
                 {spinner}
@@ -36,12 +48,12 @@ export default class PersonDetails extends Component {
     }    
 }
 
-const PersonView = ( {person} ) => {
-    const { name, gender, hair_color, mass, id } = person;
+const PersonView = ( {person, personId} ) => {
+    const { name, gender, hair_color, mass} = person;
     return (
         <React.Fragment>
             <img className = 'personeImage' 
-                src = {`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+                src = {`https://starwars-visualguide.com/assets/img/characters/${personId}.jpg`}
                 alt = { name }
                 title = { name }></img>
             <div>
