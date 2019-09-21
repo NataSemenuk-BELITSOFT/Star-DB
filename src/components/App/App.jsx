@@ -3,26 +3,29 @@ import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet/RandomPlanet';
 import ItemList from '../ItemList/ItemList';
 import PersonDetails from '../PersonDetails/PersonDetails'; 
-import Spinner from '../Spinner/Spinner';
+import PersonePage from '../PersonePage/PersonePage';
 import './App.css';
+import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
 
 class App extends Component {
     state = {
-        selectedPerson: 10,
+        hasError: false,
     }
-    onItemSelected = (id) => {
+    componentDidCatch() {
         this.setState({
-            selectedPerson: id,
+            hasError:true,
         })
-    };
+    }
     render() {
-        console.log('StAtE', this.state.selectedPerson);
+        const { hasError } = this.state;
+        if(hasError) {
+            return <ErrorIndicator />
+        }
         return (
             <div>
                 <Header/>
                 <RandomPlanet/>
-                <ItemList onItemSelected = {this.onItemSelected}/>
-                <PersonDetails personId = {this.state.selectedPerson}/>
+                <PersonePage />
             </div>
         );
     }
