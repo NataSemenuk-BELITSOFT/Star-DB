@@ -4,6 +4,7 @@ import ItemDetails from '../ItemDetails/ItemDetails';
 import ItemList from '../ItemList/ItemList';
 import SwapiService from '../../services/swapi-service';
 import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
+import Record from '../Record/Record';
 
 export default class StarshipPage extends Component {
     swapiService = new SwapiService();
@@ -23,7 +24,13 @@ export default class StarshipPage extends Component {
                     <ItemList onItemSelected = {this.onItemSelected}
                             getData={this.swapiService.getAllStarships}
                             renderData = {(item) => `${item.name}`}/>
-                    <ItemDetails id = {this.state.selectedStarship}/>
+                    <ItemDetails id = {this.state.selectedStarship}
+                                getData = {this.swapiService.getStarship}
+                                getImageUrl = {this.swapiService.getStarshipImage}>
+                        <Record label = 'Model' field = 'model'/>
+                        <Record label = 'Crew' field = 'crew'/>
+                        <Record label = 'Manufacturer' field = 'manufacturer'/>
+                    </ItemDetails>
                 </div>
             </ErrorBoundry>
         );

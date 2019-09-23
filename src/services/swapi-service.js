@@ -1,3 +1,5 @@
+import { async } from "q";
+
 export default class SwapiService {
     _apiBase = 'https://swapi.co/api';
     
@@ -15,7 +17,6 @@ export default class SwapiService {
     };
     getPersone = async (id) => {
         const person = await this.getResourse(`/people/${id}`);
-        console.log('OOOOOOOOOOOOOOOOOOO', person);
         return person;
     };
 
@@ -36,6 +37,17 @@ export default class SwapiService {
         const starship = await this.getResourse(`/starships/${id}`);
         return starship;
     };
+
+    getPersonImage = (id) => {
+        return `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
+    }
+    getStarshipImage = (id) => {
+        return `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
+    }
+    getPlanetImage = (id) => {
+        return `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`;
+    }
+    
     _extractId = ( item ) => {
         const idRegExp = /\/([0-9]*)\/$/;
         const id = item.url.match(idRegExp)[1];

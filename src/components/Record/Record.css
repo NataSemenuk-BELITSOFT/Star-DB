@@ -1,0 +1,8 @@
+.description__item {
+    color: white;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+.description__value {
+    padding: 20px;
+}
