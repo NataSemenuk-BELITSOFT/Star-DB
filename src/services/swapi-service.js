@@ -9,34 +9,34 @@ export default class SwapiService {
         return await res.json();
     }
 
-    async getAllPeople() {
+    getAllPeople = async () => {
         const result = await this.getResourse('/people/');
         return result.results.map(this._transformPerson);
     };
-    async getPersone(id) {
+    getPersone = async (id) => {
         const person = await this.getResourse(`/people/${id}`);
         console.log('OOOOOOOOOOOOOOOOOOO', person);
         return person;
     };
 
-    async getAllPlanets(){
+    getAllPlanets = async () =>{
         const result = await this.getResourse('/planets/');
         return result.results.map(this._transformPlanet);
     };
-    async getPlanet(id) {
+    getPlanet = async (id) => {
         const planet = await this.getResourse(`/planets/${id}`);
         return this._transformPlanet(planet);
     };
 
-    async getAllStarships() {
+    getAllStarships = async () => {
         const result = await this.getResourse('/starships/');
         return result.results.map(this._transformStarship);
     };
-    async getStarship(id) {
+    getStarship = async (id) => {
         const starship = await this.getResourse(`/starships/${id}`);
         return starship;
     };
-    _extractId( item ) {
+    _extractId = ( item ) => {
         const idRegExp = /\/([0-9]*)\/$/;
         const id = item.url.match(idRegExp)[1];
         return id;

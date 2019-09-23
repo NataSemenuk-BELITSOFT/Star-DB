@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet/RandomPlanet';
-import ItemList from '../ItemList/ItemList';
-import PersonDetails from '../PersonDetails/PersonDetails'; 
+import StarshipPage from '../StarshipPage/StarshipPage';
 import PersonePage from '../PersonePage/PersonePage';
 import './App.css';
 import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
@@ -26,6 +25,7 @@ class App extends Component {
                 <Header/>
                 <RandomPlanet/>
                 <PersonePage />
+                <StarshipPage />
             </div>
         );
     }
