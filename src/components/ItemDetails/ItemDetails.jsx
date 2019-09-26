@@ -18,7 +18,7 @@ export default class ItemDetails extends Component {
         this.updateItem();
     }
     componentDidUpdate(prevProps) {
-        if(this.props.Id !== prevProps.Id) {
+        if(this.props.id !== prevProps.id) {
             this.updateItem();
         }
     }

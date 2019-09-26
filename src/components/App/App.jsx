@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet/RandomPlanet';
 import StarshipPage from '../StarshipPage/StarshipPage';
 import PersonePage from '../PersonePage/PersonePage';
+import PlanetPage from '../PlanetPage/PlanetPage';
 import './App.css';
 import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
 
@@ -26,6 +27,7 @@ class App extends Component {
                 <RandomPlanet/>
                 <PersonePage />
                 <StarshipPage />
+                <PlanetPage />
             </div>
         );
     }

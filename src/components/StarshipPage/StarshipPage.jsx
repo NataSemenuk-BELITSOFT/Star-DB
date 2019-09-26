@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './StarshipPage.css';
 import ItemDetails from '../ItemDetails/ItemDetails';
-import ItemList from '../ItemList/ItemList';
 import SwapiService from '../../services/swapi-service';
 import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
 import Record from '../Record/Record';
+import { StarshipList } from '../sw-components/Lists';
+import { StarshipDetails } from '../sw-components/Details';
 
 export default class StarshipPage extends Component {
     swapiService = new SwapiService();
 
     state = {
-        selectedStarship: 10,
+        selectedStarship: 22,
     }
     onItemSelected = (id) => {
         this.setState({
@@ -21,16 +22,9 @@ export default class StarshipPage extends Component {
         return(
             <ErrorBoundry>
                 <div className = 'boxItem'>
-                    <ItemList onItemSelected = {this.onItemSelected}
-                            getData={this.swapiService.getAllStarships}
+                    <StarshipList onItemSelected = {this.onItemSelected}
                             renderData = {(item) => `${item.name}`}/>
-                    <ItemDetails id = {this.state.selectedStarship}
-                                getData = {this.swapiService.getStarship}
-                                getImageUrl = {this.swapiService.getStarshipImage}>
-                        <Record label = 'Model' field = 'model'/>
-                        <Record label = 'Crew' field = 'crew'/>
-                        <Record label = 'Manufacturer' field = 'manufacturer'/>
-                    </ItemDetails>
+                    <StarshipDetails itemId = {this.state.selectedStarship}/>
                 </div>
             </ErrorBoundry>
         );
