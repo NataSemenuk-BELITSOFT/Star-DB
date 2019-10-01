@@ -3,12 +3,16 @@
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgb(100,100,100);
     background-color: rgb(71, 71, 71);
 }
 .itemList__item { 
     cursor: pointer;
     padding: 10px;
     color: white;
-    background-color: rgb(71, 71, 71);
-    border: 1px solid rgb(100, 100, 100);
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+.itemList__item:last-child {
+    border: none;
 }

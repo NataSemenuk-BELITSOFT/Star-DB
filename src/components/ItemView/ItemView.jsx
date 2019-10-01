@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemView.css';
 
-const ItemView = ( {item, id, image, children} ) => {
+const ItemView = ( {item, image, children} ) => {
 
     const { name } = item;
 

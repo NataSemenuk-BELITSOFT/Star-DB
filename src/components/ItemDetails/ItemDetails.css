@@ -1,12 +1,14 @@
-.personDetails {
+.itemDetails {
     flex-basis: 50%;
+    border-radius: 5px;
     display: flex;
     padding: 10px; 
     margin: 10px;
+    margin-right: 0;
     height: 275px;
     background-color: rgb(71, 71, 71);
 }
-.personDetails>div {
+.itemDetails>div {
     margin-left: 20px;
     flex-grow: 1;
 }
