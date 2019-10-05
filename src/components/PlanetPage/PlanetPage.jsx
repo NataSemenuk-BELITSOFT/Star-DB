@@ -3,7 +3,7 @@ import './PlanetPage.css';
 import SwapiService from '../../services/swapi-service';
 import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
 import { PlanetList } from '../sw-components/Lists';
-import { PlanetDetails } from '../sw-components/Details';
+import  PlanetDetails from '../sw-components/PlanetDetails';
 
 export default class PlanetPage extends Component {
     swapiService= new SwapiService();

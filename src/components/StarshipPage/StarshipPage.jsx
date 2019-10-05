@@ -5,7 +5,7 @@ import SwapiService from '../../services/swapi-service';
 import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
 import Record from '../Record/Record';
 import { StarshipList } from '../sw-components/Lists';
-import { StarshipDetails } from '../sw-components/Details';
+import StarshipDetails from '../sw-components/StarshipDetails';
 
 export default class StarshipPage extends Component {
     swapiService = new SwapiService();
