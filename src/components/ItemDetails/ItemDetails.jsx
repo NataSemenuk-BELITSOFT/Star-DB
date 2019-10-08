@@ -6,6 +6,7 @@ import ItemView from '../ItemView/ItemView';
 import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
 
 export default class ItemDetails extends Component {
+    
     swapiService = new SwapiService;
     state = {
         item: {},
@@ -19,25 +20,25 @@ export default class ItemDetails extends Component {
         this.updateItem();
     }
     componentDidUpdate(prevProps) {
-        if(this.props.id !== prevProps.id) {
+        if(this.props.itemId !== prevProps.itemId) {
             this.updateItem();
         }
     }
     onItemLoad = (item) => {
-        const { id, getImageUrl } = this.props;  
+        const { itemId, getImageUrl } = this.props;  
         this.setState({
             item,
             loading: false,
             error: false,
-            image: getImageUrl(id),
+            image: getImageUrl(itemId),
         });
     }
     updateItem = () => {
-        const { id, getData } = this.props;  
-        if(!id) {
+        const { itemId, getData } = this.props;  
+        if(!itemId) {
             return;
         }
-            getData(id)
+            getData(itemId)
             .then(this.onItemLoad)
             .catch(this.onError);
 
@@ -49,12 +50,12 @@ export default class ItemDetails extends Component {
         })
     }
     render() {
-        const { id } = this.props;
+        const { itemId } = this.props;
         const { item, loading, image, error } = this.state;
         const errorIndicator = error ? <ErrorIndicator /> : null;
         const spinner = loading ? <Spinner /> : null;
         const content = !loading && !error ? <ItemView item = {item} 
-                                            id = {id} 
+                                            id = {itemId} 
                                             image = {image}    
                                             children = {this.props.children}/> : null;
         return (

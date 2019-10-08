@@ -16,12 +16,12 @@ export default class PlanetPage extends Component {
             selectedPlanet: id,
         })
     };
-    render(){
+    render() {
         return(
             <ErrorBoundry>
                 <div className = 'boxItem'>
                     <PlanetList onItemSelected = {this.onItemSelected}
-                            renderData = {({name}) => `${name}`}/>
+                            renderData = {({name}) => `${name}` }/>
                     
                     <PlanetDetails itemId = {this.state.selectedPlanet} />
                 </div>

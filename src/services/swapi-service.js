@@ -1,4 +1,4 @@
-import { async } from "q";
+// import { async } from "q";
 
 export default class SwapiService {
     _apiBase = 'https://swapi.co/api';

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './StarshipPage.css';
-import ItemDetails from '../ItemDetails/ItemDetails';
 import SwapiService from '../../services/swapi-service';
 import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
-import Record from '../Record/Record';
 import { StarshipList } from '../sw-components/Lists';
 import StarshipDetails from '../sw-components/StarshipDetails';
 
