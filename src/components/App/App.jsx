@@ -33,7 +33,7 @@ class App extends Component {
                         <RandomPlanet/>
                         <Route path = '/people' component = {PersonePage}/>
                         <Route path = '/planets' component = {PlanetPage}/>
-                        <Route path = '/starhips' component = {StarshipPage}/>
+                        <Route path = '/starships' component = {StarshipPage}/>
                     </div>
                 </Router>
             </SwapiServiceProvider>

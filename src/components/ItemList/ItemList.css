@@ -1,11 +1,17 @@
 .itemList {
     flex-basis: 50%;
-    list-style-type: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 10px 0;
-    border-radius: 5px;
     border: 1px solid rgb(100,100,100);
     background-color: rgb(71, 71, 71);
+    list-style-type: none;
+}
+.itemList>div {
+    margin-left: 20px;
+    flex-grow: 1;
 }
 .itemList__item { 
     cursor: pointer;

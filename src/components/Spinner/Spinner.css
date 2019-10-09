@@ -38,6 +38,11 @@
       transform: rotate(-360deg);
     }
   }
+  .lds-css {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .lds-double-ring {
     margin: auto;
   }

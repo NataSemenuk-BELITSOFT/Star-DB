@@ -7,14 +7,11 @@ import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
 
 export default class ItemDetails extends Component {
     
-    swapiService = new SwapiService;
+    swapiService = new SwapiService();
     state = {
         item: {},
         loading: true, 
         image: null,
-    }
-    constructor() {
-        super();
     }
     componentDidMount() {
         this.updateItem();

@@ -1,9 +1,10 @@
-.imageForError {
-  width: 200px;
-}
 .box {
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+.imageForError {
+  width: 200px;
 }
 .box>div {
   display: flex;

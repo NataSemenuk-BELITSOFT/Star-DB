@@ -4,7 +4,7 @@ import image from './imageError.svg';
 const ErrorIndicator = () => {
     return (
         <div className = 'box'>
-            <img className = 'imageForError' src = { image }/>
+            <img className = 'imageForError' src = { image } alt = 'Commet'/>
             <div>
                 <span>Ooops...</span>
                 <span>Something is wrong.</span>
