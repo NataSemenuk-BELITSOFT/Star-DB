@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet/RandomPlanet';
 import StarshipPage from '../StarshipPage/StarshipPage';
@@ -26,13 +27,15 @@ class App extends Component {
         }
         return (
             <SwapiServiceProvider value = {this.swapiService}>
-                <div>
-                    <Header/>
-                    <RandomPlanet/>
-                    <PersonePage />
-                    <StarshipPage />
-                    <PlanetPage />
-                </div>
+                <Router>
+                    <div>
+                        <Header/>
+                        <RandomPlanet/>
+                        <Route path = '/people' component = {PersonePage}/>
+                        <Route path = '/planets' component = {PlanetPage}/>
+                        <Route path = '/starhips' component = {StarshipPage}/>
+                    </div>
+                </Router>
             </SwapiServiceProvider>
         );
     }
