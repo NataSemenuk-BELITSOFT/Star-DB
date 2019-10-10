@@ -8,13 +8,13 @@ const Header = () => {
             <Link to = '/' className = 'logo'>Star DB</Link>
             <ul className = 'nav'>
                 <li className = 'nav-item'>
-                    <Link to = '/people'>People</Link>
+                    <Link to = '/people/'>People</Link>
                 </li>
                 <li className = 'nav-item'>
-                    <Link to = '/planets'>Planets</Link>
+                    <Link to = '/planets/'>Planets</Link>
                 </li>
                 <li className = 'nav-item'>
-                    <Link to = '/starships'>Starhips</Link>
+                    <Link to = '/starships/'>Starhips</Link>
                 </li>
             </ul>
         </div>

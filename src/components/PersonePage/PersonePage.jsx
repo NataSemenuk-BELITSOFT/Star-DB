@@ -1,31 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PersonePage.css';
-import SwapiService from '../../services/swapi-service';
+import { withRouter } from 'react-router-dom';
 import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
 import { PersonList } from '../sw-components/Lists';
-import PersonDetails from '../sw-components/PersonDetails';
 
-export default class PersonePage extends Component {
-    swapiService= new SwapiService();
-    state = {
-        selectedPerson: 21,
-    }
-    
-    onItemSelected = (id) => {
-        this.setState({
-            selectedPerson: id,
-        })
-    };
-    render(){
-        return(
-            <ErrorBoundry>
-                <div className = 'boxItem'>
-                    <PersonList onItemSelected = {this.onItemSelected}
-                            renderData = {({name, gender}) => `${name} (${gender})`}/>
-                    
-                    <PersonDetails itemId = {this.state.selectedPerson} />
-                </div>
-            </ErrorBoundry>
-        );
-    }
+ const PersonePage = ({history}) => {
+    return(
+        <ErrorBoundry>
+            <div className = 'boxItem'>
+                <PersonList onItemSelected = {(itemId) => {
+                    history.push(`/people/${itemId}`);
+                }}
+                renderData = {({name, gender}) => `${name} (${gender})`}/>               
+            </div>
+        </ErrorBoundry>
+    );
 }
+export default withRouter(PersonePage);

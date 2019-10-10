@@ -4,7 +4,7 @@
     display: flex;
     padding: 10px; 
     margin: 10px;
-    margin-right: 0;
+    margin: 10px 0;
     height: 275px;
     background-color: rgb(71, 71, 71);
 }
