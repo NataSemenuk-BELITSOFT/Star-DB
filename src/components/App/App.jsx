@@ -31,6 +31,7 @@ class App extends Component {
                     <div>
                         <Header/>
                         <RandomPlanet/>
+                        <Route path = '/' exact render = {() => <h1>Welcome to StarDB</h1>}/>
                         <Route path = '/people' component = {PersonePage}/>
                         <Route path = '/planets' component = {PlanetPage}/>
                         <Route path = '/starships' component = {StarshipPage}/>
